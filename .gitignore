@@ -1,2 +1,13 @@
+#FPGA
 *.bak
 *.xcf
+*.flock
+
+# LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.gz
+*.toc
