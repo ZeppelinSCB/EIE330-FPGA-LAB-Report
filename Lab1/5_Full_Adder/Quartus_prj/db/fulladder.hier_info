@@ -1,0 +1,14 @@
+|fulladder
+key1 => LED_out.IN0
+key1 => LED_carry.IN0
+key1 => LED_carry.IN0
+key2 => LED_out.IN1
+key2 => LED_carry.IN1
+key2 => LED_carry.IN0
+key3 => LED_out.IN1
+key3 => LED_carry.IN1
+key3 => LED_carry.IN1
+LED_carry << LED_carry.DB_MAX_OUTPUT_PORT_TYPE
+LED_out << LED_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
