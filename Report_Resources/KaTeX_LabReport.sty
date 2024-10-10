@@ -1,0 +1,141 @@
+\ProvidesPackage{KaTeX_LabReport}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%Language-specific commands
+%--------------------------------------
+\usepackage[utf8]{inputenc} % Inputting UTF8
+\usepackage[T1]{fontenc} % Outputting T1
+\usepackage{CJKutf8}
+%\usepackage{xeCJK}
+\usepackage[portuguese]{babel}
+
+
+%Graphics and Figures
+%--------------------------------------
+\usepackage{float} % Allows figures floated overpages
+\usepackage{placeins} % FloatBarrier command
+\usepackage{rotating} % Rotate figures
+\usepackage{graphicx} % Include graphics
+\usepackage{subcaption} % Allow subfigure
+\usepackage{booktabs} % Enhances the quality of tables
+\usepackage{array} % 
+\usepackage{colortbl} % Allows coloured tables
+
+
+%Typesetting and Layout
+%--------------------------------------
+\usepackage{blindtext} % Generate dummy text (lorem ipsum) for testing
+\usepackage{enumerate} 
+\usepackage{setspace} % Set space between lines
+\usepackage{parskip} % Space between paragraph instead of indent
+\usepackage{geometry} % Set detailed page layout
+\usepackage{hyperref} % In document hyperlink
+\usepackage{titlesec} % Enable title formating
+\usepackage{xcolor} % Color package
+
+
+%Mathematical 
+%--------------------------------------
+\usepackage{stix} % Contains mathmatic glyphs
+\usepackage{amsmath} % Advanced math typesetting
+\usepackage{physics}
+\usepackage{siunitx} % SI unit typesetting
+\usepackage{pgfplots} % Function ploting
+\usepackage{pgfplotstable} % ploting
+
+
+%Circuit
+%--------------------------------------
+\usepackage{circuitikz} % drawing circuits
+
+%Code
+%--------------------------------------
+\usepackage{silence} % filter warnings
+
+
+%----------------------------------------------------------------------------------------
+%	Custom Format Command and DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+
+%Command Setting
+%----------------------------------------------------
+\AtBeginDocument{\RenewCommandCopy\qty\SI} % Use qty from SI pkg.
+
+%Page format
+%----------------------------------------------------
+\parskip 6pt
+\setstretch{1.15}
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\newdimen\origiwspc
+\origiwspc=\fontdimen2\font %original inter-word space
+\fontdimen2\font=0.2ex
+
+\pgfplotsset{compat=1.18} %compatibility with pgfplots
+\WarningFilter{latexfont}{Font shape} %silence the warning due to the STIX font
+
+%Section format
+%----------------------------------------------------
+\newcommand\chaptername{Chapter}
+\renewcommand{\thesection}{\Roman{section}} 
+\titleformat{\section}[display]%command shape
+    {\Huge}%format
+    {
+        \newpage
+        \setlength\fboxsep{0pt}
+        \color{gray} \fontsize{20}{5}\selectfont\chaptername\ \thesection
+    }%label
+    {0pt}{}{}
+\titlespacing*{\section}{0pt}{0pt}{20pt}
+\renewcommand{\thesubsection}{\thesection: \Roman{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection. \roman{subsubsection}}
+
+\titleformat{\subsection}
+    {\bfseries\Large}%format
+    {\huge\textnormal{\thesubsection}}%label
+    {10pt}{}{}
+
+%Color Setting
+%----------------------------------------------------
+\definecolor{chigusa}{RGB}{58,143,183}
+
+%Hyperlink Setting
+%----------------------------------------------------
+\hypersetup{hidelinks,
+	colorlinks=true,
+    linkcolor = black,
+    urlcolor  = chigusa,
+    citecolor = blue,
+	pdfstartview=Fit,
+	breaklinks=true
+}
+
+%----------------------------------------------------------------------------------------
+%	Custom Functional Command
+%----------------------------------------------------------------------------------------
+
+%Circuit Related
+%----------------------------------------------------
+\newcommand*{\Ohm}{
+    $\Omega$
+    } % Ohm symbol
+
+%Document Related
+%----------------------------------------------------
+\newcommand{\blankpage}[0]{
+    \clearpage
+    \vspace*{\fill}
+    \begin{center}
+        This page is intentionally left blank.
+    \end{center}
+    \vspace*{\fill}
+    \clearpage
+    }
