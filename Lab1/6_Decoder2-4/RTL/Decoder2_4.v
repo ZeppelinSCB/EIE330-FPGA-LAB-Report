@@ -1,4 +1,4 @@
-module Decoder2-4 (
+module Decoder2_4 (
     input wire [1:0] a, //2 bit input
     output reg [3:0] b //output
 );

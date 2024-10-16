@@ -1,7 +1,50 @@
+#For one to place random junk
+Local_Ignored/
+
 #FPGA
-*.bak
 *.xcf
 *.flock
+
+# modelsim
+# ignore ModelSim generated files and directories (temp files and so on)
+[_@]*
+
+# ignore compilation output of ModelSim
+*.mti
+*.dat
+*.dbs
+*.psm
+*.bak
+*.bak*
+*.cmp
+*.html
+*.bsf
+
+# ignore simulation output of ModelSim
+wlf*
+*.wlf
+*.vstf
+*.ucdb
+transcript*
+sc_dpiheader.h
+vsim.dbg
+
+# FOSS 
+*.asc
+*.bin
+*.blif
+*.swp
+host
+*.o
+
+# verilator
+obj_dir
+
+# vivado
+.Xil
+
+# temp
+*.swp
 
 # LaTeX
 *.aux

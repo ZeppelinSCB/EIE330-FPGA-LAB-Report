@@ -1,8 +1,8 @@
-## Report for EIE330 FPGA-Based System Design
+# Report for EIE330 FPGA-Based System Design
 
 This repo holds the implemented code and the report for EIE330.
 
-### Table of Contents <a name="ToC"></a>
+## Table of Contents <a name="ToC"></a>
 + Lab 1:
   + 1-0. Report 
   + 1-5. Full adder
@@ -12,6 +12,19 @@ This repo holds the implemented code and the report for EIE330.
   + LaTeX style files 
   + Layout and icon resources
 
-### Contributions
+## Note for Collabrator
+Notice that QuatusII Actucally Generate loads of files that no need to be followed. So remeber to add [this git ignore file](https://gist.github.com/nhasbun/71918796044b7ba89d6662133495f754) to the Quartus_prj directory where the .qpf file is found
+<br />
+If you want to versioning the output SOF/POF files, please redirecting the generated output to an own folder. To do this go to:
+```
+"Assignments"
+  -> "Settings
+  -> "Compilation Process Settings"
+  -> "Save project output files in specified directory"
+```
+
+
+
+## Contributions
 * Verlog code listed [above](#Table-of-Contents) are origin coding of the group. <br />
 * The example code (Not listed) are originally forked from [our teacher](https://github.com/pikipity/FPGA-Laboratory).<br />
