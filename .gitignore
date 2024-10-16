@@ -4,7 +4,7 @@ Local_Ignored/
 #FPGA
 *.xcf
 *.flock
-msim_transcript
+**/*.db_info
 
 # modelsim
 # ignore ModelSim generated files and directories (temp files and so on)
@@ -26,7 +26,7 @@ wlf*
 *.wlf
 *.vstf
 *.ucdb
-transcript*
+**/*transcript*
 sc_dpiheader.h
 vsim.dbg
 

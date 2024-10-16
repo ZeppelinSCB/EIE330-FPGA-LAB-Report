@@ -2,6 +2,7 @@
 module tb_Decoder2_4;
 
 reg [1:0] in_a;
+reg enable;
 
 wire [3:0] out;
 
@@ -13,6 +14,7 @@ end
 
 always #10 in_a[0] <= {$random} % 2;
 always #10 in_a[1] <= {$random} % 2;
+always #50 enable <= {$random} % 2;
 
  //------------------------------------------------------------
 /*
@@ -28,7 +30,7 @@ always #10 in_a[1] <= {$random} % 2;
  Decoder2_4 Decoder_inst
  (
  .a(in_a), //input a
-
+ .enable(enable), //input enable
  .b(out) //output [3:0] out
  );
 
