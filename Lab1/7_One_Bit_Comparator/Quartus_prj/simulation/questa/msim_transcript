@@ -17,21 +17,18 @@
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
-# vlib rtl_work
-# vmap work rtl_work
-# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
-# vmap work rtl_work 
-# Copying c:/intelfpga_lite/questa_fse/win64/../modelsim.ini to modelsim.ini
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab1/7_One_Bit_Comparator/RTL {C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab1/7_One_Bit_Comparator/RTL/onebitcomparator.v}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 19:09:12 on Oct 16,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab1/7_One_Bit_Comparator/RTL" C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab1/7_One_Bit_Comparator/RTL/onebitcomparator.v 
-# -- Compiling module onebitcomparator
-# 
-# Top level modules:
-# 	onebitcomparator
-# End time: 19:09:12 on Oct 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
+# ** Error (suppressible): (vdel-19) Failed to access library 'rtl_work' at "rtl_work".
+# No such file or directory. (errno = ENOENT)
+# ** Warning: (vdel-57) Library 'rtl_work' is missing or is not a valid QuestaSim library.
+# ** Error: c:/intelfpga_lite/questa_fse/win64/vdel failed.
+# Error in macro ./onebitcomparator_run_msim_rtl_verilog.do line 4
+# c:/intelfpga_lite/questa_fse/win64/vdel failed.
+#     while executing
+# "error [FixExecError $msg]"
+#     (procedure "vdel" line 6)
+#     invoked from within
+# "vdel -lib rtl_work -all"
+#     invoked from within
+# "if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }"

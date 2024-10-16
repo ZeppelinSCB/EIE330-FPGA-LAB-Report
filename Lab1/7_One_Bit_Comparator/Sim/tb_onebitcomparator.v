@@ -6,8 +6,8 @@ reg A, B;
 wire LED_greater,LED_equal,LED_smaller;
 
 initial begin
-A <= 1'b0;
-B <= 1'b0;
+A <= 1;
+B <= 1;
 end
 
 always #10 A <= {$random} % 2;
