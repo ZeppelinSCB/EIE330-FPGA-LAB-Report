@@ -2,7 +2,7 @@
 
 This repo holds the implemented code and the report for EIE330.
 
-## Table of Contents <a name="ToC"></a>
+## Table of Original Contents <a name="ToC"></a>
 + Lab 1:
   + 1-0. Report 
   + 1-5. Full adder
@@ -26,5 +26,5 @@ If you want to versioning the output SOF/POF files, please redirecting the gener
 
 
 ## Contributions
-* Verlog code listed [above](#Table-of-Contents) are origin coding of the group. <br />
+* Verlog code listed [above](#Table-of-Contents) are origin coding of member from group 18 in EIE330, AW2024. <br />
 * The example code (Not listed) are originally forked from [our teacher](https://github.com/pikipity/FPGA-Laboratory).<br />
