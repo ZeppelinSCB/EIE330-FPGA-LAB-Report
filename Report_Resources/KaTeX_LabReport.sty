@@ -84,6 +84,7 @@
 
 %Section format
 %----------------------------------------------------
+% #
 \newcommand\chaptername{Chapter}
 \renewcommand{\thesection}{\Roman{section}} 
 \titleformat{\section}[display]%command shape
@@ -95,14 +96,15 @@
     }%label
     {0pt}{}{}
 \titlespacing*{\section}{0pt}{0pt}{20pt}
+% ##
 \renewcommand{\thesubsection}{\thesection: \Roman{subsection}}
-\renewcommand{\thesubsubsection}{\thesubsection. \roman{subsubsection}}
-
 \titleformat{\subsection}
     {\bfseries\Large}%format
     {\huge\textnormal{\thesubsection}}%label
-    {10pt}{}{}
-
+    {12pt}{}{}
+% ###
+\renewcommand{\thesubsubsection}{\roman{subsubsection}}
+\titlespacing{\subsubsection}{0pt}{15pt}{5pt}
 %Color Setting
 %----------------------------------------------------
 \definecolor{chigusa}{RGB}{58,143,183}
