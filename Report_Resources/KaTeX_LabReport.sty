@@ -23,18 +23,21 @@
 \usepackage{booktabs} % Enhances the quality of tables
 \usepackage{array} % 
 \usepackage{colortbl} % Allows coloured tables
+\usepackage{svg}%Allows svg files diagram
 
 
 %Typesetting and Layout
 %--------------------------------------
 \usepackage{blindtext} % Generate dummy text (lorem ipsum) for testing
-\usepackage{enumerate} 
+%\usepackage{enumerate} 
+\usepackage{enumitem}
 \usepackage{setspace} % Set space between lines
 \usepackage{parskip} % Space between paragraph instead of indent
 \usepackage{geometry} % Set detailed page layout
 \usepackage{hyperref} % In document hyperlink
 \usepackage{titlesec} % Enable title formating
 \usepackage{xcolor} % Color package
+\usepackage{tocloft} % Table of content formating
 
 
 %Mathematical 
@@ -74,6 +77,8 @@
 \setstretch{1.15}
 \pagenumbering{roman}
 \pagestyle{plain}
+
+\addtolength{\cftsubsecnumwidth}{7pt} %Increase space, avoid overlapping
 
 \newdimen\origiwspc
 \origiwspc=\fontdimen2\font %original inter-word space
