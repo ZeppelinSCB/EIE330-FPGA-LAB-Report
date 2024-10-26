@@ -21,34 +21,34 @@
 # vmap work rtl_work
 # Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
 # vmap work rtl_work 
-# Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Copying c:/intelfpga_lite/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/RTL {C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/syn_flip_flop.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/RTL {C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/syn_flip_flop.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:21:39 on Aug 19,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/RTL" C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/syn_flip_flop.v 
+# Start time: 19:54:20 on Oct 23,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/RTL" C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/syn_flip_flop.v 
 # -- Compiling module syn_flip_flop
 # 
 # Top level modules:
 # 	syn_flip_flop
-# End time: 12:21:39 on Aug 19,2024, Elapsed time: 0:00:00
+# End time: 19:54:20 on Oct 23,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim {C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim/tb_syn_flip_flop.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim {C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim/tb_syn_flip_flop.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 12:21:39 on Aug 19,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim" C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim/tb_syn_flip_flop.v 
+# Start time: 19:54:20 on Oct 23,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim" C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/Quartus_prj/syn_flip_flop/../../Sim/tb_syn_flip_flop.v 
 # -- Compiling module tb_syn_flip_flop
 # 
 # Top level modules:
 # 	tb_syn_flip_flop
-# End time: 12:21:39 on Aug 19,2024, Elapsed time: 0:00:00
+# End time: 19:54:20 on Oct 23,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_syn_flip_flop
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb_syn_flip_flop 
-# Start time: 12:21:39 on Aug 19,2024
+# Start time: 19:54:20 on Oct 23,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -81,6 +81,5 @@
 # @time  440ns: key_in=1 led_out=0
 # @time  460ns: key_in=0 led_out=1
 # @time  480ns: key_in=0 led_out=0
-# Unrecognized paper size (Letter), using Custom
-# End time: 12:33:29 on Aug 19,2024, Elapsed time: 0:11:50
+# End time: 19:01:53 on Oct 24,2024, Elapsed time: 23:07:33
 # Errors: 0, Warnings: 1
