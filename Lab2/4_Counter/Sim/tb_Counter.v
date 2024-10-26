@@ -15,7 +15,6 @@ reg sys_rst_n ; //Reset button
  
  // Other inputs use un-block assignments
  sys_rst_n <= 1'b0; //At the beginning, the reset button is pressed.
- key_in <= 1'b0; //The input is initialed as 0
  
  #20
  sys_rst_n <= 1'b1; //After 20ns, the reset button is released
@@ -28,13 +27,10 @@ reg sys_rst_n ; //Reset button
  always #10 sys_clk = ~sys_clk; 
 
  
- always #3000000000 key_in <= {$random} % 2;
+ always #3000000000 sys_rst_n <= {$random} % 2;
 
  //------------------------------------------------------------
- initial begin
- $timeformat(-9, 0, "ns", 6);
- $monitor("@time %t: key_in=%b led_out=%b", $time, key_in, led_out);
- end
+ 
  //------------------------------------------------------------
 
  //------------------syn_flip_flop_inst-------------------
@@ -42,7 +38,7 @@ reg sys_rst_n ; //Reset button
  (
  .sys_clk (sys_clk ), //input sys_clk
  .sys_rst_n (sys_rst_n ), //input sys_rst_n
- .counter (counter ), //input key_in
+ .counter (counter ), 
 
  .led_out (led_out ) //output led_out
  );

@@ -2,9 +2,10 @@ module Counter
 (
 input wire sys_clk , //Clock input. we Will use system clock, 50M Hz
 input wire sys_rst_n, //Reset button
-output reg [24:0] counter, //Counter
 output reg led_out //Output
  );
+
+reg [24:0] counter;
 
 always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to connect 
 	if(sys_rst_n == 1'b0)
