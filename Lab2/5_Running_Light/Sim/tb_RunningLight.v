@@ -15,7 +15,7 @@ reg sys_rst_n ; //Reset button
  
  //Init inputs
  initial begin
- sys_clk = 1'b1; //Clock uses blocking assignment.
+ sys_clk <= 1'b1; //Clock uses blocking assignment.
  
  // Other inputs use un-block assignments
  sys_rst_n <= 1'b0; //At the beginning, the reset button is pressed.
@@ -31,13 +31,13 @@ reg sys_rst_n ; //Reset button
  always #10 sys_clk = ~sys_clk; 
 
  
- always #3000000000 sys_rst_n <= {$random} % 2;
+ always #3000000 sys_rst_n <= {$random} % 2;
 
  //------------------------------------------------------------
  //------------------------------------------------------------
 
- //------------------syn_flip_flop_inst-------------------
- Counter Counter_inst
+ //------------------RunningLight_inst-------------------
+ RunningLight RunningLight_inst
  (
  .sys_clk (sys_clk ), //input sys_clk
  .sys_rst_n (sys_rst_n ), //input sys_rst_n
