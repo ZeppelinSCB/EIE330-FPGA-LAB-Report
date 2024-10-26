@@ -1,5 +1,5 @@
 Analysis & Synthesis report for asyn_flip_flop
-Mon Aug 19 12:46:10 2024
+Wed Oct 23 20:41:53 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 19 12:46:10 2024          ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 23 20:41:53 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; asyn_flip_flop                                 ;
 ; Top-level Entity Name              ; asyn_flip_flop                                 ;
@@ -151,8 +151,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -162,13 +162,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
-; ../../RTL/asyn_flip_flop.v       ; yes             ; User Verilog HDL File  ; C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/asyn_flip_flop.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; ../../RTL/asyn_flip_flop.v       ; yes             ; User Verilog HDL File  ; C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/asyn_flip_flop.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -257,12 +257,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Aug 19 12:46:02 2024
+    Info: Processing started: Wed Oct 23 20:41:47 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off asyn_flip_flop -c asyn_flip_flop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/wangz/documents/github/fpga-laboratory/lab2/3_flip-flop/rtl/asyn_flip_flop.v
-    Info (12023): Found entity 1: asyn_flip_flop File: C:/Users/wangz/Documents/GitHub/FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/asyn_flip_flop.v Line: 1
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/94384/desktop/eie330-fpga-laboratory/lab2/3_flip-flop/sim/tb_asyn_flip_flop.v
+    Info (12023): Found entity 1: tb_asyn_flip_flop File: C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/Sim/tb_asyn_flip_flop.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/94384/desktop/eie330-fpga-laboratory/lab2/3_flip-flop/rtl/asyn_flip_flop.v
+    Info (12023): Found entity 1: asyn_flip_flop File: C:/Users/94384/Desktop/EIE330-FPGA-Laboratory/Lab2/3_Flip-Flop/RTL/asyn_flip_flop.v Line: 1
 Info (12127): Elaborating entity "asyn_flip_flop" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -272,9 +274,9 @@ Info (21057): Implemented 5 device resources after synthesis - the final resourc
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 1 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4785 megabytes
-    Info: Processing ended: Mon Aug 19 12:46:10 2024
-    Info: Elapsed time: 00:00:08
+    Info: Peak virtual memory: 4773 megabytes
+    Info: Processing ended: Wed Oct 23 20:41:53 2024
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:17
 
 
