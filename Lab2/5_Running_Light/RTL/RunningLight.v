@@ -29,7 +29,7 @@ always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to conne
 			countercounter <= 4'b0001;
 		end
 	end
-	else
+	else 
 	begin
 		counter <= counter - 1'b1;
 	end
