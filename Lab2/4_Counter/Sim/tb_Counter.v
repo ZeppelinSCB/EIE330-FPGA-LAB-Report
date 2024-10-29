@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-module tb_syn_flip_flop();
+module tb_Counter();
 
 //reg define
 reg sys_clk ; //Clock input. we Will use system clock, 50M Hz
@@ -7,7 +7,7 @@ reg sys_rst_n ; //Reset button
 
 //wire deifne
  wire led_out ;
- wire [24:0] counter, //Counter
+ wire [24:0] counter; //Counter
  
  //Init inputs
  initial begin
@@ -27,18 +27,20 @@ reg sys_rst_n ; //Reset button
  always #10 sys_clk = ~sys_clk; 
 
  
- always #3000000000 sys_rst_n <= {$random} % 2;
+ always #300000000 sys_rst_n <= {$random} % 2;
+ always@(negedge sys_rst_n)begin
+	#100 sys_rst_n <= ~sys_rst_n;
+	end
 
  //------------------------------------------------------------
 
  //------------------------------------------------------------
 
- //------------------syn_flip_flop_inst-------------------
+ //------------------Counter_inst-------------------
  Counter Counter_inst
  (
  .sys_clk (sys_clk ), //input sys_clk
  .sys_rst_n (sys_rst_n ), //input sys_rst_n
- .counter (counter ), 
 
  .led_out (led_out ) //output led_out
  );
