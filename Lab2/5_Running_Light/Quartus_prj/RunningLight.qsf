@@ -83,8 +83,9 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_RunningLight -section_
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "20 s" -section_id tb_RunningLight
+set_global_assignment -name VERILOG_FILE ../RTL/Counter.v
 set_global_assignment -name VERILOG_FILE ../Sim/tb_RunningLight.v
 set_global_assignment -name VERILOG_FILE ../RTL/RunningLight.v
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "10 s" -section_id tb_RunningLight
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE ../Sim/tb_RunningLight.v -section_id tb_RunningLight
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
