@@ -2,15 +2,16 @@ module RunningLight
 (
 input wire sys_clk , //Clock input. we Will use system clock, 50M Hz
 input wire sys_rst_n, //Reset button
-output reg [24:0] counter, //Counter
-output reg [3:0] countercounter, // 4-bit shift counter
 output reg led_0, //Output1
 output reg led_1, //Output2
 output reg led_2, //Output3
 output reg led_3  //Output4
  );
+ 
+reg [24:0] counter; //Counter
+reg [3:0] countercounter; // 4-bit shift counter
 
-always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to connect 
+always@(posedge sys_clk) begin //One should use or to connect 
 	if(sys_rst_n == 1'b0)
 	begin
 		counter <= 25'd0;

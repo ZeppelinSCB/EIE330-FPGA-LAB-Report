@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-module tb_syn_flip_flop();
+module tb_RunningLight();
 
 //reg define
 reg sys_clk ; //Clock input. we Will use system clock, 50M Hz
@@ -17,7 +17,6 @@ reg sys_rst_n ; //Reset button
  initial begin
  sys_clk <= 1'b1; //Clock uses blocking assignment.
  
- // Other inputs use un-block assignments
  sys_rst_n <= 1'b0; //At the beginning, the reset button is pressed.
  
  #20
@@ -30,10 +29,8 @@ reg sys_rst_n ; //Reset button
  */
  always #10 sys_clk = ~sys_clk; 
 
- 
- always #3000000 sys_rst_n <= {$random} % 2;
+ // always #3000000 sys_rst_n <= {$random} % 2;
 
- //------------------------------------------------------------
  //------------------------------------------------------------
 
  //------------------RunningLight_inst-------------------
@@ -41,8 +38,7 @@ reg sys_rst_n ; //Reset button
  (
  .sys_clk (sys_clk ), //input sys_clk
  .sys_rst_n (sys_rst_n ), //input sys_rst_n
- .counter (counter ), //input key_in
- .countercounter (countercounter ), //input key_in
+
  .led_0 (led_0 ), //output led_0
  .led_1 (led_1 ), //output led_1
  .led_2 (led_2 ), //output led_2
