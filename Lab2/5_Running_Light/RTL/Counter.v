@@ -22,7 +22,7 @@ always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to conne
 	end
 	else if(counter == 0) 
 	begin
-		counter = 10; // 2499_9999;
+		counter = 2499_9999; // 2499_9999;
 		out <= !out;
 	end
 	else

@@ -30,7 +30,9 @@ end
 /// shift counter logic state machine
 always@(posedge clk_1hz, negedge sys_rst_n) 
 	begin 
-		if(sys_rst_n == 1'b0 | shift_counter == 4'b1000) 	// reset shift counter
+		if(sys_rst_n == 1'b0) 	// reset shift counter
+			shift_counter <= 4'b0001;
+		else if(shift_counter == 4'b1000)
 			shift_counter <= 4'b0001;
 		else // shift the counter by a bit 
 			shift_counter <= shift_counter << 1;
