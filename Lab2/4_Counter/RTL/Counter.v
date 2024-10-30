@@ -8,19 +8,19 @@ output reg led_out //Output
 reg [24:0] counter;
 
 always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to connect 
-	if(sys_rst_n == 1'b0)
+	if(sys_rst_n == 1'b0) //reset counter and light
 	begin
-		counter <= 0;
-		led_out <= 0;
+		counter <= 1'h0;
+		led_out <= 1'b1;
 	end
-	else if(counter == 0) 
+	else if(counter <= 1'h0) //counter reset if 1s is end and reverse light
 	begin
-		counter = 2499_9999;
-		led_out <= !led_out;
+		counter = 25'h2499_9999;
+		led_out <= !led_out; //!led_out
 	end
 	else
 	begin
-		counter <= counter - 1'b1;
+		counter <= counter - 1'h1; //counting down
 	end
 end
 endmodule
