@@ -20,7 +20,7 @@ always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to conne
 	end
 	else
 	begin
-		counter <= counter - 1'h1; //counting down
+		counter <= counter - 1'd1; //counting down
 	end
 end
 endmodule
