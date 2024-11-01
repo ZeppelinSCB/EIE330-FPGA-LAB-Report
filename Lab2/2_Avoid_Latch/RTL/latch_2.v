@@ -17,8 +17,8 @@ output reg [7:0] out //Output
  3'b100 : out = 8'b0001_0000;
  3'b101 : out = 8'b0010_0000;
  3'b110 : out = 8'b0100_0000;
- //3'b111 : out = 8'b1000_0000;
- //default: out = 8'b0000_0001;
+ 3'b111 : out = 8'b1000_0000;
+ default: out = 8'b0000_0001;
  endcase
 
  endmodule

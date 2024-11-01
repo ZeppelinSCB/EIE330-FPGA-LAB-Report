@@ -5,13 +5,13 @@ input wire sys_rst_n, //Reset button
 input wire key_in , //Input button
 
 output reg led_out //Output
- );
+);
 
- always@(posedge sys_clk) 
+always@(posedge sys_clk) 
 
- if(sys_rst_n == 1'b0) 
+if(sys_rst_n == 1'b0) 
 	led_out <= 1'b0; 
- else
+else
 	led_out <= key_in;
 
- endmodule
+endmodule

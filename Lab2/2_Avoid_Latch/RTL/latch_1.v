@@ -25,7 +25,7 @@ output reg [7:0] out // Output
  out = 8'b0100_0000;
  else if({in1, in2, in3} == 3'b111)
  out = 8'b1000_0000;
- // else
- // out = 8'b0000_0001;
+ else
+ out = 8'b0000_0001;
 
  endmodule
