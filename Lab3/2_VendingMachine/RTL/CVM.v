@@ -10,7 +10,6 @@
 module CVM (
     input wire sys_clk,
     input wire sys_rst_n,
-    input wire refund_input,
     input wire[1:0] coin, // [d1]: 50 avos, [d2]: 1 pataca
     
     output reg coke,
@@ -39,6 +38,7 @@ always @(posedge sys_clk or negedge sys_rst_n)
                 Ins_15: refound_coins <= 3'd3;
                 Ins_20: refound_coins <= 3'd4;
                 Ins_25: refound_coins <= 3'd5;
+                default : refound_coins <= 3'd0;
             endcase
         end
     else
