@@ -13,14 +13,14 @@ always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to conne
 		counter <= 25'b0;
 		led_out <= 1'b1;
 	end
-	else if(counter <= 0'h0) //counter reset if 1s is end and reverse light
+	else if(counter <= 0) //counter reset if 1s is end and reverse light
 	begin
 		counter = 25'd_24_999_999;
 		led_out <= !led_out; //!led_out
 	end
 	else
 	begin
-		counter <= counter - 1'd1; //counting down
+		counter <= counter - 1'b1; //counting down
 	end
 end
 endmodule

@@ -24,10 +24,10 @@ Simulate system clock 50M Hz. The period is 20ns. The half period is 10ns,
 which means the clock signal is inversed every 10ns.
 */
 always #10 sys_clk = ~sys_clk;
-// always #300000 sys_rst_n <= {$random} % 2; //press
-// always@(negedge sys_rst_n)begin
-// 	#100 sys_rst_n <= ~sys_rst_n; //unpress
-// 	end
+//always #300000 sys_rst_n <= {$random} % 2; //press
+always@(negedge sys_rst_n)begin
+#10 sys_rst_n <= ~sys_rst_n; //unpress
+end
 //------------------RunningLight_inst-------------------
 Counter Counter_inst
 (
