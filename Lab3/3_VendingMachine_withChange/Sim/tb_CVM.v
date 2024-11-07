@@ -31,7 +31,8 @@ end
     if(sys_rst_n == 1'b0)
         coin <= 2'b0;
     else
-        coin <= {$random} % 3; //Take remainder, generate non-negative random number 0, 1, 2
+        coin <= {$random} % 3; 
+//Take remainder, generate non-negative random number 0, 1, 2
 
 //------------------------------------------------------------
 //Get the internal variables of the instance "simple_fsm_inst"
