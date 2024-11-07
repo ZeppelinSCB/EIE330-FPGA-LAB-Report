@@ -1,0 +1,38 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+
+%Include Predefined Header
+%----------------------------------------------------
+\usepackage{./Report_Resources/KaTeX-LabReport}
+\usepackage{lipsum}
+
+% Note: 
+% The input command is equivalent to copy-paste the content of the file
+% into the current file.
+
+
+%\let\svparbox\parbox
+%\fboxsep=-\fboxrule
+%\renewcommand\parbox[3][c]{\fbox{\svparbox[#1]{#2}{#3}}}
+\setlist[itemize]{noitemsep}
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\include{./00 Cover&Contents&Intro/00 cover}
+\blankpage
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\tableofcontents
+\newpage
+\include{3-0/cover}
+\include{3-0/cover}
+%----------------------------------------------------------------------------------------
+%	Main Content
+%----------------------------------------------------------------------------------------
+
+\end{document}
