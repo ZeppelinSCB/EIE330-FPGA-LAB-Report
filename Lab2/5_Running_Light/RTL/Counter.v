@@ -14,7 +14,8 @@ output reg out           //Output
 
 reg [24:0] counter;
 
-always@(posedge sys_clk or negedge sys_rst_n) begin //One should use or to connect 
+always@(posedge sys_clk or negedge sys_rst_n) begin '
+	//One should use or to connect 
 	if(sys_rst_n == 1'b0)
 	begin
 		counter <= 0;
