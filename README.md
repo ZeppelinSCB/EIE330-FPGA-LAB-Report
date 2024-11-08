@@ -8,6 +8,12 @@ This repo holds the implemented code and the report for EIE330.
   + 1-5. Full adder
   + 1-6. Decoder
   + 1-7. Comparetor
++ Lab 2:
+  + 2-4. Counter
+  + 2-5. Flowing Light
++ Lab 3:
+  + 3-2. Vending Machine
+  + 3-3. Vending Machine with refund
 + Report_Resources:
   + LaTeX style files 
   + Layout and icon resources

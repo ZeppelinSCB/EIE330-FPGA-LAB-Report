@@ -1,6 +1,6 @@
 #For one to place random junk
 Local_Ignored/
-*/.output
+**/.output
 
 #FPGA
 *.xcf
