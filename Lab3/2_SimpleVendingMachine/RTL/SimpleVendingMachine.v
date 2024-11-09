@@ -18,53 +18,61 @@ output reg o_change //Only considering changes for 0.5 yuan (01), change when o_
 
  always@(posedge sys_clk or negedge sys_rst_n)
  if(sys_rst_n == 1'b0)
- state <= IDLE; 
+	state <= IDLE; 
  else case(state)
  
  IDLE : if(i_money == 2'b01) 
- state <= ONE;
+	state <= ONE;
  else if(i_money == 2'b10) 
- state <= TWO;
+	state <= TWO;
  else
- state <= IDLE;
+	state <= IDLE;
 
  ONE : if(i_money == 2'b01) 
- state <= TWO;
+	state <= TWO;
  else if(i_money == 2'b10)
- state <= THREE;
+	state <= THREE;
  else
- state <= ONE;
+	state <= ONE;
 
  TWO : if(i_money == 2'b01)
- state <= THREE;
+	state <= THREE;
  else if(i_money == 2'b10)
- state <= IDLE;
+	state <= IDLE;
  else
- state <= TWO;
+	state <= TWO;
  
  THREE : if(i_money == 2'b01)
- state <= IDLE;
+	state <= IDLE;
  else if(i_money == 2'b10) //Money is over-accepted, change needed
- state <= IDLE;
+	state <= IDLE;
  else
- state <= THREE;
+	state <= THREE;
  
  default: state <= IDLE;
  endcase
 
  
  always@(posedge sys_clk or negedge sys_rst_n)
- if(sys_rst_n == 1'b0)
- o_cola <= 1'b0;
- else if((state == TWO) && (i_money == 2'b10))
- o_cola <= 1'b1;
- else if((state == THREE) && (i_money == 2'b01))
- o_cola <= 1'b1;
- else if((state == THREE) && (i_money == 2'b10))begin
- o_cola <= 1'b1;
- o_change <= 1'b1;
+ if(sys_rst_n == 1'b0)begin
+	o_cola <= 1'b0;
+	o_change <= 1'b0;
  end
- else
- o_cola <= 1'b0;
+ else if((state == TWO) && (i_money == 2'b10))begin
+	o_cola <= 1'b1;
+	o_change <= 1'b0;
+ end
+ else if((state == THREE) && (i_money == 2'b01))begin
+	o_cola <= 1'b1;
+	o_change <= 1'b0;
+ end
+ else if((state == THREE) && (i_money == 2'b10))begin
+	o_cola <= 1'b1;
+	o_change <= 1'b1;
+ end
+ else begin
+	o_cola <= 1'b0;
+	o_change <= 1'b0;
+ end
 
  endmodule

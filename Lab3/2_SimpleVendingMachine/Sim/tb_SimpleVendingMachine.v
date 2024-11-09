@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module tb_SimpleVendingMahcine();
+module tb_SimpleVendingMachine();
 //reg define
 reg sys_clk ;
 reg sys_rst_n ;
@@ -31,8 +31,14 @@ end
     if(sys_rst_n == 1'b0)
         i_money <= 2'b0;
     else
-        i_money <= {$random} % 3; 
+        i_money <= {$random} % 3;
 //Take remainder, generate non-negative random number 0, 1, 2
+
+//------------------------------------------------------------
+//Get the internal variables of the instance "simple_fsm_inst"
+    wire [3:0] state = SimpleVendingMachine_inst.state;
+//-------------------------------------------------------------
+
 
 //------------------------SimpleVendingMachine_inst------------------------
 SimpleVendingMachine SimpleVendingMachine_inst(
@@ -40,7 +46,7 @@ SimpleVendingMachine SimpleVendingMachine_inst(
     .sys_rst_n (sys_rst_n), //input sys_rst_n
     .i_money (i_money), //input coin
 
-    .coke (o_cola), //output cola
-    .change (o_change) //output change
+    .o_cola (o_cola), //output cola
+    .o_change (o_change) //output change
 );
 endmodule
