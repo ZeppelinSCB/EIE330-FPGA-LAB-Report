@@ -1,5 +1,5 @@
 Flow report for vga_colorbar
-Wed Aug 21 09:15:46 2024
+Wed Nov 13 20:55:31 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Wed Aug 21 09:15:46 2024          ;
+; Flow Status                        ; Successful - Wed Nov 13 20:55:31 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; vga_colorbar                                   ;
 ; Top-level Entity Name              ; vga_colorbar                                   ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE10F17C8                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 109 / 10,320 ( 1 % )                           ;
+;     Total combinational functions  ; 109 / 10,320 ( 1 % )                           ;
+;     Dedicated logic registers      ; 29 / 10,320 ( < 1 % )                          ;
+; Total registers                    ; 29                                             ;
+; Total pins                         ; 20 / 180 ( 11 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 423,936 ( 0 % )                            ;
+; Embedded Multiplier 9-bit elements ; 0 / 46 ( 0 % )                                 ;
+; Total PLLs                         ; 1 / 2 ( 50 % )                                 ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/21/2024 09:15:39 ;
+; Start date & time ; 11/13/2024 20:55:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga_colorbar        ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 186416556927.172420293911776           ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 145862339891776.173150251302740        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_vga_colorbar                   ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -104,29 +104,41 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4728 MB             ; 00:00:17                           ;
-; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:17                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4806 MB             ; 00:00:08                           ;
+; Fitter               ; 00:00:03     ; 1.0                     ; 5635 MB             ; 00:00:02                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4712 MB             ; 00:00:00                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4800 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4659 MB             ; 00:00:00                           ;
+; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:10                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; DESKTOP-HNS9E6Q  ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; IBM-P01          ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; IBM-P01          ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; IBM-P01          ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; IBM-P01          ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IBM-P01          ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off vga_colorbar -c vga_colorbar --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off vga_colorbar -c vga_colorbar
+quartus_fit --read_settings_files=off --write_settings_files=off vga_colorbar -c vga_colorbar
+quartus_asm --read_settings_files=off --write_settings_files=off vga_colorbar -c vga_colorbar
+quartus_sta vga_colorbar -c vga_colorbar
+quartus_eda --read_settings_files=off --write_settings_files=off vga_colorbar -c vga_colorbar
 
 
 
