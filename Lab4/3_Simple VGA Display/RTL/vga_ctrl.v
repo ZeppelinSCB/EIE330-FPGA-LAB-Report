@@ -16,7 +16,7 @@ output wire vsync , //Field sync signal
  ////
 
  //parameter define based on VGA timing diagram
- parameter H_SYNC = 10'd96 ; //pixel clock cycles requested by line sync
+parameter H_SYNC = 10'd96 ; //pixel clock cycles requested by line sync
  parameter H_BACK = 10'd40 ; //pixel clock cycles requested by back edge of line sync
  parameter H_LEFT = 10'd8 ; //pixel clock cycles requested by left border of line sync
  parameter H_VALID = 10'd640 ; //pixel clock cycles requested by valid data of line sync

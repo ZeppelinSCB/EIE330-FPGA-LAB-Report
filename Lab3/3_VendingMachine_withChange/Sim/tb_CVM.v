@@ -21,19 +21,42 @@ end
     always #10 sys_clk = ~sys_clk;
 
     always begin
-        #500 sys_rst_n = 1'b0; //reset
+        #20 sys_rst_n = 1'b0; //reset
         #20 sys_rst_n = 1'b1; //release reset
+        #100 sys_rst_n = 1'b0;
+        #20 sys_rst_n = 1'b1;
     end
 
 
 //Generate the random input
+/*
     always@(posedge sys_clk or negedge sys_rst_n)
     if(sys_rst_n == 1'b0)
         coin <= 2'b0;
     else
         coin <= {$random} % 3; 
+        */
+
 //Take remainder, generate non-negative random number 0, 1, 2
 
+always begin
+    #20
+    coin = 10;
+    #20
+    coin = 10;
+    #20
+    coin = 01;
+    #20
+    coin = 10;
+    #20
+    coin = 10;
+    #20
+    coin = 01;
+    #20
+    coin = 10;
+    #20
+    coin = 01;
+end
 //------------------------------------------------------------
 //Get the internal variables of the instance "simple_fsm_inst"
     wire [2:0] st_cur = CVM_inst.st_cur;

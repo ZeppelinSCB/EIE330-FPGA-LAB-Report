@@ -1,0 +1,65 @@
+@startuml
+
+' Use [*] as starting and ending point.
+' Use --> for arrows.
+
+' optoinally, leave out empty state descriptions
+hide empty description
+
+state "Idle" as s00
+state "50 avos" as s05
+state "1 pataca" as s10
+state "1 pataca 50 avos" as s15
+state "2 pataca" as s20
+state "2 pataca 50 avos" as s25
+
+
+s00 -> s00: 0
+s00 --> s00: refund | Change= coin + 0
+s00 --> s05: 50 avos
+s00 --> s10: 1 pataca
+s00 : if NOT reset
+s00 : [output] Cola = 0
+s00 : [output] Change = 0
+
+s05 -> s05: 0
+s05 --> s00: refund | Change= coin + 1
+s05 --> s10: 50 avos
+s05 --> s15: 1 pataca
+s05 : if NOT reset
+s05 : [output] Cola = 0
+s05 : [output] Change = 0
+
+s10 -> s10: 0
+s10 --> s00: refund | Change= coin + 2
+s10 --> s15: 50 avos
+s10 --> s20: 1 pataca
+s10 : if NOT reset
+s10 : [output] Cola = 0
+s10 : [output] Change = 0
+
+s15 -> s15: 0
+s15 --> s00: refund | Change= coin + 3
+s15 --> s20: 50 avos
+s15 --> s25: 1 pataca
+s15 : if NOT reset
+s15 : [output] Cola = 0
+s15 : [output] Change = 0
+
+s20 -> s20: 0
+s20 --> s00: refund | Change= coin + 4
+s20 --> s05: 50 avos
+s20 --> s10: 1 pataca
+s20 : if NOT reset
+s20 : [output] Cola = 1
+s20 : [output] Change = 0
+
+s25 -> s25: 0
+s25 --> s00: refund | Change= coin + 5
+s25 --> s05: 50 avos
+s25 --> s10: 1 pataca
+s25 : if NOT reset
+s25 : [output] Cola = 1
+s25 : [output] Change = 1
+
+@enduml
