@@ -65,5 +65,9 @@
 */*_sim/
 incremental_db/
 db/
+<<<<<<< HEAD
+_output_files/
+=======
 output_files/
+>>>>>>> bb746f44acc6ddbfc220483a8fd55ab340266431
 PLLJ_PLLSPE_INFO.txt
