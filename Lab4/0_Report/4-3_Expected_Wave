@@ -1,0 +1,9 @@
+{ signal: [
+	{ name: "clk",           wave: "P........" },
+	{ name: "reset",         wave: "hLh....Lh"},
+	{ name: "coin",          wave: "x========", data:["10",  "10",  "01",  "10","10","01","10","01"] },
+	{ name: "Current state", wave: "x========", data:["Idle","Idle","$1",  "$1.5","$2.5","$1","$0","$0"]},
+	{ name: "Next state",    wave: "x========", data:["Idle","$1",  "$1.5","$2.5","$1","$1","$0","$1"]},
+  	{ name: "Coke",          wave: "l.....hl."},
+  { name: "Refund",          wave: "l.....==0",data:["$0.5","$2"]}
+]}

@@ -68,19 +68,6 @@ always@(posedge vga_clk) begin
     char[15] <= {8'b00000000, 8'b00000000, 8'b00000000, 8'b00000000, 8'b00000000, 8'b00000000, 8'b00000000, 8'b00000000};
 end
 
-assign pix_data_out = (pic_valid == 1'b1) ? pic_data : BACKGROUD;
-
-
-//Generate Char address signal
-always@(posedge vga_clk or negedge sys_rst_n) begin
-	if(sys_rst_n == 1'b0)
-		char_addr <= 14'd0;
-	else if(char_addr == (PIC_SIZE - 1'b1))
-		char_addr <= 14'd0;
-	else if(rd_en == 1'b1)
-		char_addr <= rom_char_addraddr + 2'd2;
-end
-
 //Generate color data according coordinates
 always@(posedge vga_clk or negedge sys_rst_n) begin
 	if(sys_rst_n == 1'b0)
