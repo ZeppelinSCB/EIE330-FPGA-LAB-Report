@@ -14,5 +14,4 @@ DEVICE_FAMILY="Cyclone IV E"
 aclr0
 address_a
 clock0
-rden_a
 q_a

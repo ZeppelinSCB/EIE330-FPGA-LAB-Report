@@ -43,10 +43,10 @@ module rom_pic (
 	rden,
 	q);
 
-	input	[13:0]  address;
+	input	[18:0]  address;
 	input	  clock;
 	input	  rden;
-	output	[15:0]  q;
+	output	[1:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -56,8 +56,8 @@ module rom_pic (
 // synopsys translate_on
 `endif
 
-	wire [15:0] sub_wire0;
-	wire [15:0] q = sub_wire0[15:0];
+	wire [1:0] sub_wire0;
+	wire [1:0] q = sub_wire0[1:0];
 
 	altsyncram	altsyncram_component (
 				.address_a (address),
@@ -76,7 +76,7 @@ module rom_pic (
 				.clocken1 (1'b1),
 				.clocken2 (1'b1),
 				.clocken3 (1'b1),
-				.data_a ({16{1'b1}}),
+				.data_a ({2{1'b1}}),
 				.data_b (1'b1),
 				.eccstatus (),
 				.q_b (),
@@ -87,16 +87,16 @@ module rom_pic (
 		altsyncram_component.address_aclr_a = "NONE",
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
-		altsyncram_component.init_file = "../../../Lab5/4_ROM_VGA/Image/image.mif",
+		altsyncram_component.init_file = "../Image/YuriHana.mif",
 		altsyncram_component.intended_device_family = "Cyclone IV E",
 		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=NO",
 		altsyncram_component.lpm_type = "altsyncram",
-		altsyncram_component.numwords_a = 16384,
+		altsyncram_component.numwords_a = 307200,
 		altsyncram_component.operation_mode = "ROM",
 		altsyncram_component.outdata_aclr_a = "NONE",
 		altsyncram_component.outdata_reg_a = "UNREGISTERED",
-		altsyncram_component.widthad_a = 14,
-		altsyncram_component.width_a = 16,
+		altsyncram_component.widthad_a = 19,
+		altsyncram_component.width_a = 2,
 		altsyncram_component.width_byteena_a = 1;
 
 
@@ -122,44 +122,44 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "../../../Lab5/4_ROM_VGA/Image/image.mif"
-// Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "16384"
+// Retrieval info: PRIVATE: MIFfilename STRING "../Image/YuriHana.mif"
+// Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "307200"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 // Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 // Retrieval info: PRIVATE: RegOutput NUMERIC "0"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 // Retrieval info: PRIVATE: UseDQRAM NUMERIC "0"
-// Retrieval info: PRIVATE: WidthAddr NUMERIC "14"
-// Retrieval info: PRIVATE: WidthData NUMERIC "16"
+// Retrieval info: PRIVATE: WidthAddr NUMERIC "19"
+// Retrieval info: PRIVATE: WidthData NUMERIC "2"
 // Retrieval info: PRIVATE: rden NUMERIC "1"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
-// Retrieval info: CONSTANT: INIT_FILE STRING "../../../Lab5/4_ROM_VGA/Image/image.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "../Image/YuriHana.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
-// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "16384"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "307200"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "ROM"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_REG_A STRING "UNREGISTERED"
-// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "14"
-// Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "19"
+// Retrieval info: CONSTANT: WIDTH_A NUMERIC "2"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
-// Retrieval info: USED_PORT: address 0 0 14 0 INPUT NODEFVAL "address[13..0]"
+// Retrieval info: USED_PORT: address 0 0 19 0 INPUT NODEFVAL "address[18..0]"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
-// Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL "q[15..0]"
+// Retrieval info: USED_PORT: q 0 0 2 0 OUTPUT NODEFVAL "q[1..0]"
 // Retrieval info: USED_PORT: rden 0 0 0 0 INPUT VCC "rden"
-// Retrieval info: CONNECT: @address_a 0 0 14 0 address 0 0 14 0
+// Retrieval info: CONNECT: @address_a 0 0 19 0 address 0 0 19 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @rden_a 0 0 0 0 rden 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 16 0 @q_a 0 0 16 0
+// Retrieval info: CONNECT: q 0 0 2 0 @q_a 0 0 2 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom_pic.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom_pic.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom_pic.cmp FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom_pic.bsf FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL rom_pic_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL rom_pic_bb.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL rom_pic_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf

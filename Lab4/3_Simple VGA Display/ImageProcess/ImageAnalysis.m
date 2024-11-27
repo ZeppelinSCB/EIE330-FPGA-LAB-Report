@@ -36,7 +36,7 @@ COLOR = R+G+B;      % R + 3 << G + 6 << B
 %save variable COLOR to a file in HEX format for the chip to read
 fileID = fopen ('Mickey.list', 'w');
 for i = 1:size(COLOR(:), 1)-1
-    fprintf (fileID, '%x\n', COLOR(i)); % COLOR (dec) -> print to file (hex)
+    fprintf (fileID, 'parameter COLOR%d%X\n', COLOR(i)); % COLOR (dec) -> print to file (hex)
 end
 fprintf (fileID, '%x', COLOR(size(COLOR(:), 1))); % COLOR (dec) -> print to file (hex)
 %save variable COLOR to a file in HEX format for the chip to read

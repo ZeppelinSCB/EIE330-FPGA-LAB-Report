@@ -16,9 +16,9 @@ output wire [15:0] pix_data_out //color information
 parameter H_VALID = 10'd640 , //Maximum x value
 V_VALID = 10'd480 ; //Maximum y value
 
-parameter H_PIC = 10'd100 , //Length of image
-W_PIC = 10'd100 , //Width of image
-PIC_SIZE= 14'd10000 ; //Total pixel number
+parameter H_PIC = 10'd640 , //Length of image
+W_PIC = 10'd480 , //Width of image
+PIC_SIZE= 19'd307200 ; //Total pixel number
 
 parameter RED = 16'hF800, //RED
 ORANGE = 16'hFC00, //Orange
@@ -31,6 +31,11 @@ BLACK = 16'h0000, //Black
 WHITE = 16'hFFFF, //White
 GRAY = 16'hD69A; //Grey
 
+parameter COLOR1 = 16'h48313;
+parameter COLOR2 = 16'hCB585;
+parameter COLOR3 = 16'hE6C0A;
+parameter COLOR4 = 16'h70616;
+
 //wire define
 wire rd_en ; //ROM read enable
 wire [15:0] pic_data ; //data from ROM
@@ -39,16 +44,17 @@ wire [15:0] pic_data ; //data from ROM
 reg [13:0] rom_addr ; //ROM address
 reg pic_valid ; //picture valid signal
 reg [15:0] pix_data ; //beckground data
+reg [15:0] pic_color ; //final output color
 
 ////
 //\* Main Code \//
 ////
 
 //Generate read enable signal
-assign rd_en = (((pix_x >= (((H_VALID - H_PIC)/2) - 1'b1))
-&& (pix_x < (((H_VALID - H_PIC)/2) + H_PIC - 1'b1)))
-&&((pix_y >= ((V_VALID - W_PIC)/2))
-&& ((pix_y < (((V_VALID - W_PIC)/2) + W_PIC)))));
+assign rd_en = (pix_x < H_VALID) && (pix_y < V_VALID) && (pix_x >= 0) && (pix_y >= 0); /*(((pix_x >= (((H_VALID - H_PIC)/2) - 1'b1))//left edge
+&& (pix_x < (((H_VALID - H_PIC)/2) + H_PIC - 1'b1)))//right edge
+&&((pix_y >= ((V_VALID - W_PIC)/2))//top edge
+&& ((pix_y < (((V_VALID - W_PIC)/2) + W_PIC)))));//bottom edge*/
 
 //Generate picture valid signal
 always@(posedge vga_clk or negedge sys_rst_n) begin
@@ -58,8 +64,18 @@ always@(posedge vga_clk or negedge sys_rst_n) begin
 		pic_valid <= rd_en;
 end
 
+always@(posedge vga_clk or negedge sys_rst_n)
+    case(pic_data)
+        10'd0: pic_color = COLOR1;
+        10'd1: pic_color = COLOR2;
+        10'd2: pic_color = COLOR3;
+        10'd3: pic_color = COLOR4;
+        default:
+        pic_color = GRAY;
+    endcase
+
 //Generate final output color signal
-assign pix_data_out = (pic_valid == 1'b1) ? pic_data : pix_data;
+assign pix_data_out = pic_color;//(pic_valid == 1'b1) ? pic_color : pix_data;
 
 //Generate background color data
 always@(posedge vga_clk or negedge sys_rst_n) begin

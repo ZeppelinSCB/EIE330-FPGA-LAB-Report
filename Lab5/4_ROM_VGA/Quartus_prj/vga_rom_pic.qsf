@@ -63,11 +63,9 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name QIP_FILE ipcore_dir/clk_gen.qip
 set_global_assignment -name VERILOG_FILE ../RTL/vga_ctrl.v
 set_global_assignment -name VERILOG_FILE ../RTL/vga_rom_pic.v
 set_global_assignment -name VERILOG_FILE ../RTL/vga_pic.v
-set_global_assignment -name QIP_FILE ipcore_dir/rom_pic.qip
 set_location_assignment PIN_C2 -to hsync
 set_location_assignment PIN_A5 -to rgb[15]
 set_location_assignment PIN_E6 -to rgb[14]
@@ -96,4 +94,6 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_vga_rom_p
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "20 ms" -section_id tb_vga_rom_pic
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_vga_rom_pic -section_id tb_vga_rom_pic
 set_global_assignment -name EDA_TEST_BENCH_FILE ../Sim/tb_vga_rom_pic.v -section_id tb_vga_rom_pic
+set_global_assignment -name QIP_FILE "ip-core/clk_gen.qip"
+set_global_assignment -name QIP_FILE "ip-core/rom_pic.qip"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

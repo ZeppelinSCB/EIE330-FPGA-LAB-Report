@@ -1,0 +1,4 @@
+parameter COLOR1 = 16'h48313;
+parameter COLOR2 = 16'hCB585;
+parameter COLOR3 = 16'hE6C0A;
+parameter COLOR4 = 16'h70616;

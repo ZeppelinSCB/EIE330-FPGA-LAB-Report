@@ -58,4 +58,5 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name QIP_FILE ipcore_dir/rom_256x8.qip
+set_global_assignment -name MIF_FILE ../RTL/IPcore/rom_256x8.mif
+set_global_assignment -name QIP_FILE ../RTL/IPcore/rom_port1.qip

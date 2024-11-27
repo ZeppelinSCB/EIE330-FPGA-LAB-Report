@@ -14,6 +14,11 @@ This repo holds the implemented code and the report for EIE330.
 + Lab 3:
   + 3-2. Vending Machine
   + 3-3. Vending Machine with refund
++ Lab 4:
+  + 4-3. Simple VGA Display
++ Lab 5:
+  + 5-3. Key Debounce
+  + 5-4. VGA Display from ROM
 + Report_Resources:
   + LaTeX style files 
   + Layout and icon resources
