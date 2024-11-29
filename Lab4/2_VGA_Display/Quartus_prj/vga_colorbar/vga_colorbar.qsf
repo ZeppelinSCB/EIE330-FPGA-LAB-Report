@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE10F17C8
-set_global_assignment -name TOP_LEVEL_ENTITY vga_colorbar
+set_global_assignment -name TOP_LEVEL_ENTITY hdmi_colorbar
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:46:11  AUGUST 21, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
@@ -62,19 +62,11 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE ../../Sim/tb_vga_colorbar.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_vga_colorbar -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_vga_colorbar -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_vga_colorbar
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "20 ms" -section_id tb_vga_colorbar
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_vga_colorbar -section_id tb_vga_colorbar
-set_global_assignment -name EDA_TEST_BENCH_FILE ../../Sim/tb_vga_colorbar.v -section_id tb_vga_colorbar
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_hdmi_colorbar -section_id eda_simulation
 set_location_assignment PIN_C2 -to hsync
 set_location_assignment PIN_A5 -to rgb[15]
 set_location_assignment PIN_E6 -to rgb[14]
@@ -95,4 +87,27 @@ set_location_assignment PIN_B4 -to rgb[0]
 set_location_assignment PIN_E1 -to sys_clk
 set_location_assignment PIN_M15 -to sys_rst_n
 set_location_assignment PIN_D1 -to vsync
+set_global_assignment -name VERILOG_FILE ../../RTL/hdmi_ctrl.v
+set_global_assignment -name VERILOG_FILE ../../RTL/hdmi_enc.v
+set_global_assignment -name QIP_FILE ../../RTL/ipcore/ddio_out.qip
+set_global_assignment -name VERILOG_FILE ../../RTL/par_to_ser.v
+set_global_assignment -name VERILOG_FILE ../../RTL/hdmi_colorbar.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_N14 -to ddc_sda
+set_location_assignment PIN_P15 -to ddc_scl
+set_location_assignment PIN_R16 -to tmds_clk_p
+set_location_assignment PIN_P16 -to tmds_clk_n
+set_location_assignment PIN_K16 -to tmds_data_n[2]
+set_location_assignment PIN_L16 -to tmds_data_n[1]
+set_location_assignment PIN_N16 -to tmds_data_n[0]
+set_location_assignment PIN_K15 -to tmds_data_p[2]
+set_location_assignment PIN_L15 -to tmds_data_p[1]
+set_location_assignment PIN_N15 -to tmds_data_p[0]
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_hdmi_colorbar -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_hdmi_colorbar
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "5 s" -section_id tb_hdmi_colorbar
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_hdmi_colorbar -section_id tb_hdmi_colorbar
+set_global_assignment -name EDA_TEST_BENCH_FILE ../../Sim/tb_hdmi_colorbar.v -section_id tb_hdmi_colorbar
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
